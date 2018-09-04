@@ -2,7 +2,7 @@
 var user = require('../models/user').user;
 var response = require('../utils/utils').handlerResponse;
 // 登录的逻辑处理
-module.exports = function (req, res) {
+login = function (req, res) {
     var query = {
         name: req.body.username,
         password: req.body.password
@@ -12,6 +12,7 @@ module.exports = function (req, res) {
             res.end('服务器错误')
         }
         if (userInfo.length > 0) {
+            req.session.user = userInfo[0].name
             res.json(
                 response({
                     message: '登录成功'
@@ -27,3 +28,14 @@ module.exports = function (req, res) {
         }
     });
 }
+
+loginOut = function (req, res) {
+    req.session.user = null
+    res.json(
+        response({
+            message: '登出成功'
+        })
+    )
+}
+
+module.exports = {login,  loginOut}
