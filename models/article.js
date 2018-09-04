@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var moment = require('moment');
-var config = require('../config/default.js');
+var config = require('config-lite')(__dirname);
 mongoose.connect(config.mongodb, { useNewUrlParser: true }); // 连接数据库
 var Schema = mongoose.Schema;// 创建模型
 var articleScheMa = new Schema({

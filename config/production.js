@@ -1,5 +1,5 @@
 module.exports = {
-    port: 8000, //端口号
+    port: 8088, //端口号
     session: {
         name: 'djblog',
         secret: 'djblog',
