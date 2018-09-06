@@ -4,7 +4,7 @@
   "description": "djblog的后台，利用node.js搭建",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "istanbul cover node_modules/mocha/bin/_mocha",
     "dev": "cross-env NODE_ENV=dev node app.js",
     "prd": "cross-env NODE_ENV=production pm2 start app.js --name 'djblog'"
   },
@@ -24,10 +24,15 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
+    "express-winston": "^3.0.0",
     "moment": "^2.22.2",
-    "mongoose": "^5.2.9"
+    "mongoose": "^5.2.9",
+    "winston": "^3.0.0"
   },
   "devDependencies": {
-    "cross-env": "^5.2.0"
+    "cross-env": "^5.2.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "supertest": "^3.1.0"
   }
 }

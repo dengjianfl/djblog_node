@@ -4,6 +4,12 @@ var checkLogin = require('../middlewares/checkLogin').checkLogin;
 var oneBolg = require('../controller/oneBlog.js');
 
 // 登录接口
+// router.post('/login', function(req, res, next) {
+//     req._routeWhitelists.body = ['username','password'];
+//     next();
+// },require('../controller/login.js').login);
+
+// 登录接口
 router.post('/login', require('../controller/login.js').login);
 
 // 登出接口
