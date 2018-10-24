@@ -4,9 +4,10 @@
   "description": "djblog的后台，利用node.js搭建",
   "main": "app.js",
   "scripts": {
-    "test": "istanbul cover node_modules/mocha/bin/_mocha",
     "dev": "cross-env NODE_ENV=dev node app.js",
-    "prd": "cross-env NODE_ENV=production pm2 start app.js --name 'djblog'"
+    "prd": "cross-env NODE_ENV=production pm2 start app.js --name 'djblog'",
+    "justTest": "mocha test",
+    "testCoverage": "istanbul cover node_modules/mocha/bin/_mocha"
   },
   "repository": {
     "type": "git",
